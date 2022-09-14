@@ -49,7 +49,6 @@ img {
 /* todo: just nu bara test */
 h1 {
   font-size: 50px;
-  line-height: 0;
 }
 
 /* todo: just nu bara test */
@@ -66,10 +65,17 @@ h1 {
   display: none;
 }
 
+header {
+  min-height: 20vh;
+  padding: 0 20px;
+}
 /* Börjar styla headern */
 .top-navigation-content {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  position: relative;
+  min-height: 3rem;
 }
 
 /* Loggan och namnet fyller upp tom plats  */
@@ -82,13 +88,20 @@ h1 {
   order: 2;
 }
 
-i:focus,
-i:hover {
-  border: 2px solid red;
-}
-
 .searchbar {
   order: 1;
+}
+
+.navigation-links-container {
+  position: absolute;
+  top: 3rem;
+  left: -20px;
+  width: 100vw;
+  border-top: 2px solid var(--secondary-background-color);
+}
+
+.navigation-links-container > li {
+  border-bottom: 2px solid #281300;
 }
 
 /* todo: just nu bara test */
@@ -96,42 +109,39 @@ i:hover {
   font-family: "Fascinate Inline", cursive;
 }
 
-/* Klasser för .brown-text, .white-text, .btn, .btn-red, .bottom-container,
-.decoration-container och .presentation, .presentation-slogan, .presentation-slogan-left, .presentation-slogan-right*/
-
-.navigation-links-container {
-  visibility: hidden;
-}
-
-.hamburger-toggle:checked ~ .navigation-links-container {
-  visibility: visible;
-}
-
 i {
   cursor: pointer;
+  min-width: 4rem;
+  text-align: end;
 }
 
-/* TEST */
 .navigation-link-text {
-  padding: 0.3rem 0.5rem;
-  background: linear-gradient(
-      to left,
-      var(--main-background-color) 50%,
-      var(--secondary-background-color) 50%
-    )
-    right;
-  background-size: 200% 100%;
-  /* todo: ändra till desktop
-  width: fit-content; */
+  padding: 2rem 0;
+  background: var(--main-background-color);
+  text-align: center;
 }
 
 .navigation-link:is(:hover, :active, :focus) > .navigation-link-text {
   color: var(--secondary-text-color);
-  transition: all 0.4s ease;
-  background-position: left;
+  background-color: var(--secondary-background-color);
 }
 
-/* För att menyn ska försvinna snabbt och inte ha transition  */
-.hamburger-toggle:checked ~ .navigation-links-container .navigation-link-text {
-  transition: all 0.4s ease;
+@media (min-width: 580px) {
+  .navigation-link-text {
+    padding: 0.3rem 0.5rem;
+    background: linear-gradient(
+        to left,
+        var(--main-background-color) 50%,
+        var(--secondary-background-color) 50%
+      )
+      right;
+    background-size: 200% 100%;
+    transition: all 0.4s ease;
+    width: fit-content;
+  }
+
+  .navigation-link:is(:hover, :active, :focus) > .navigation-link-text {
+    transition: all 0.4s ease;
+    background-position: left;
+  }
 }

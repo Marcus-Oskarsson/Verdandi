@@ -15,12 +15,7 @@
         <div class="logo-container">
           <picture></picture><a href="index.html">Kaffebaren</a>
         </div>
-        <input
-          type="checkbox"
-          class="hamburger-toggle hidden"
-          id="hamburger-toggle"
-        />
-        <label for="hamburger-toggle" class="hamburger" tabindex="0">
+        <div class="hamburger" id="hamburger-toggle">
           <i
             class="fa-solid fa-bars hamburger-icon"
             id="hamburger-menu-open"
@@ -29,8 +24,11 @@
             class="fa-solid fa-xmark hamburger-icon hidden"
             id="hamburger-menu-close"
           ></i>
-        </label>
-        <ul class="navigation-links-container">
+        </div>
+        <ul
+          class="navigation-links-container hidden"
+          id="navigation-links-container"
+        >
           <li>
             <a class="navigation-link" href=""
               ><p class="navigation-link-text">Hem</p></a
@@ -53,8 +51,8 @@
       </nav>
     </header>
     <main>
-      <h1 class="white-text">Kaffebaren</h1>
       <section class="presentation" id="presentation">
+        <h1 class="white-text">Kaffebaren</h1>
         <!-- Stor text för slogan -->
         <p class="brown-text presentation-slogan">
           <span class="presentation-slogan-left">Må bra</span
@@ -81,6 +79,7 @@
       </section>
       <section class="shop" id="shop">
         <!-- Tänker att varje produkt (text + bild + köp-knapp) är en artikel -->
+        <h2>Produkter</h2>
       </section>
     </main>
     <footer>FOOTER</footer>
