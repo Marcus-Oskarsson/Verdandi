@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/assets/fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" type="module"></script>
+    <title>Hem | Kaffebaren</title>
+  </head>
+  <body>
+    <header>
+      <nav class="hamburger-content top-navigation-content">
+        <div class="logo-container">
+          <picture></picture><a href="index.html">Kaffebaren</a>
+        </div>
+        <input
+          type="checkbox"
+          class="hamburger-toggle hidden"
+          id="hamburger-toggle"
+        />
+        <label for="hamburger-toggle" class="hamburger" tabindex="0">
+          <i
+            class="fa-solid fa-bars hamburger-icon"
+            id="hamburger-menu-open"
+          ></i>
+          <i
+            class="fa-solid fa-xmark hamburger-icon hidden"
+            id="hamburger-menu-close"
+          ></i>
+        </label>
+        <ul class="navigation-links-container">
+          <li>
+            <a class="navigation-link" href=""
+              ><p class="navigation-link-text">Hem</p></a
+            >
+          </li>
+          <li>
+            <a class="navigation-link" href=""
+              ><p class="navigation-link-text">Butik</p></a
+            >
+          </li>
+          <li>
+            <a class="navigation-link" href=""
+              ><p class="navigation-link-text">Om oss</p></a
+            >
+          </li>
+        </ul>
+        <div class="searchbar">
+          <input type="search" placeholder="Sök" id="search-shop" />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1 class="white-text">Kaffebaren</h1>
+      <section class="presentation" id="presentation">
+        <!-- Stor text för slogan -->
+        <p class="brown-text presentation-slogan">
+          <span class="presentation-slogan-left">Må bra</span
+          ><span class="presentation-slogan-right">Med kaffe.</span>
+        </p>
+        <p class="brown-text">
+          För ett halvt sekel sedan malde vi vår första kopp kaffe. Mycket har
+          hänt sen dess, men kaffet är detsamma!
+        </p>
+        <!-- Tänker att jag har botten i en egen kontainer för att enklare kunna
+        positionera innehållet. Då många delar utgår från botten och placeras
+        relativt den är det rimligt att ha dem här. -->
+        <div class="bottom-container">
+          <p class="white-text">
+            Awake Your Dreams With A Cup Of Coffee. Good Days Start With A Good
+            Coffee
+          </p>
+          <input type="submit" value="Köp nu" class="btn btn-red brown-text" />
+          <img src="./assets/images/kaffekopp.svg" alt="kaffekopp" />
+          <div class="decoration-container">
+            <p class="white-text">Kortedalas bästa kaffe sen 1967!</p>
+          </div>
+        </div>
+      </section>
+      <section class="shop" id="shop">
+        <!-- Tänker att varje produkt (text + bild + köp-knapp) är en artikel -->
+      </section>
+    </main>
+    <footer>FOOTER</footer>
+  </body>
+</html>

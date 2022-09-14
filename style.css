@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap");
+
+/* todo: nollställ onödig default-styling, lägg in färger i variabler, bestäm ytterligare minst 1 typsnitt och importera dem korrekt, bestäm textstorlekar i rem. */
+
+/* extra: Implementera nån form av animation */
+
+:root {
+  --main-background-color: #9fc7af;
+  --secondary-background-color: #281300;
+  --main-text-color: #281300;
+  --secondary-text-color: #efefef;
+  font-size: 62.5%;
+}
+
+/* Tar bort ett par av default-värden för margin och padding för att enklare hantera styling och ändrar så storleken alltid är hela boxens storlek */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tar bort punkter för listor  */
+li {
+  list-style: none;
+}
+
+/* Tar bort dekoration från länkar */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:focus,
+a:active {
+  outline: none;
+}
+
+body {
+  background-color: var(--main-background-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* todo: just nu bara test */
+h1 {
+  font-size: 50px;
+  line-height: 0;
+}
+
+/* todo: just nu bara test */
+.white-text {
+  color: var(--secondary-text-color);
+}
+
+/* todo: just nu bara test */
+.brown-text {
+  color: var(--main-text-color);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Börjar styla headern */
+.top-navigation-content {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Loggan och namnet fyller upp tom plats  */
+.logo-container {
+  order: 0;
+  flex-grow: 1;
+}
+
+.hamburger {
+  order: 2;
+}
+
+i:focus,
+i:hover {
+  border: 2px solid red;
+}
+
+.searchbar {
+  order: 1;
+}
+
+/* todo: just nu bara test */
+.presentation-slogan {
+  font-family: "Fascinate Inline", cursive;
+}
+
+/* Klasser för .brown-text, .white-text, .btn, .btn-red, .bottom-container,
+.decoration-container och .presentation, .presentation-slogan, .presentation-slogan-left, .presentation-slogan-right*/
+
+.navigation-links-container {
+  visibility: hidden;
+}
+
+.hamburger-toggle:checked ~ .navigation-links-container {
+  visibility: visible;
+}
+
+i {
+  cursor: pointer;
+}
+
+/* TEST */
+.navigation-link-text {
+  padding: 0.3rem 0.5rem;
+  background: linear-gradient(
+      to left,
+      var(--main-background-color) 50%,
+      var(--secondary-background-color) 50%
+    )
+    right;
+  background-size: 200% 100%;
+  /* todo: ändra till desktop
+  width: fit-content; */
+}
+
+.navigation-link:is(:hover, :active, :focus) > .navigation-link-text {
+  color: var(--secondary-text-color);
+  transition: all 0.4s ease;
+  background-position: left;
+}
+
+/* För att menyn ska försvinna snabbt och inte ha transition  */
+.hamburger-toggle:checked ~ .navigation-links-container .navigation-link-text {
+  transition: all 0.4s ease;
+}
