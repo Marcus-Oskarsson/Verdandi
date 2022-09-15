@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
+/* todo: nollställ onödig default-styling, lägg in färger i variabler, bestäm ytterligare minst 1 typsnitt och importera dem korrekt, bestäm textstorlekar i rem. */
+
+/* extra: Implementera nån form av animation */
+
+/* Lägger in de mest använda färgerna i variabler för att enkelt kunna ändra färgerna på hela sidan, samt sätter font size så det motsvarar 10px */
+:root {
+  --main-background-color: #9fc7af;
+  --secondary-background-color: #281300;
+  --main-text-color: #281300;
+  --secondary-text-color: #efefef;
+  --btn-background-color: #ff6364;
+  font-size: 62.5%;
+  /* font-size: 150%; */
+}
+
+/* Tar bort ett par av default-värden för margin och padding för att enklare hantera styling och ändrar så storleken alltid är hela boxens storlek */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tar bort dekoration från länkar */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:focus,
+a:active {
+  outline: none;
+}
+
+button {
+  background-color: unset;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Tar bort punkter för listor  */
+li {
+  list-style: none;
+}
+
+/* Teckenstorlek, typsnitt och radhöjd. */
+.big-heading-size {
+  font-size: 4rem;
+}
+
+.normal-heading-size {
+  font-size: 2.8rem;
+}
+
+.normal-text-size {
+  font-size: 1.6rem;
+}
+
+.brown-text {
+  color: var(--main-text-color);
+}
+
+.white-text {
+  color: var(--secondary-text-color);
+}
+
+.bold-text {
+  font-family: "Fascinate Inline", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+}
+
+.normal-text {
+  font-family: "Playfair Display", serif;
+}
+
+/* Generella klasser */
+.hidden {
+  display: none;
+}
+
+.center-text {
+  text-align: center;
+}
+
+/* Styling av komponenter */
+/* todo: ändra till klass för att få med andra rutor */
+input[type="search"] {
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn {
+  padding: 0.8rem 3rem;
+  border: 0;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: var(--btn-background-color);
+  cursor: pointer;
+  box-sizing: border-box;
+  width: fit-content;
+}
+
+/* Styling av sidan */
+
+body {
+  background-color: var(--main-background-color);
+}
+
+/* Header, navigation och hamburgermeny */
+header {
+  position: fixed;
+  width: 100%;
+  padding: 0 20px;
+  background-color: var(--main-background-color);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.top-navigation-content {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  min-height: 4.5rem;
+  flex-wrap: wrap;
+}
+
+/* Loggan och namnet fyller upp tom plats  */
+.logo-container {
+  order: 0;
+  flex-grow: 1;
+}
+
+.hamburger-container {
+  order: 2;
+  min-width: 2rem;
+  text-align: end;
+}
+
+.searchbar {
+  order: 1;
+}
+
+.navigation-links-container {
+  position: absolute;
+  top: 4.5rem;
+  left: 0;
+  width: 100vw;
+  border-top: 2px solid var(--secondary-background-color);
+}
+
+.navigation-links-container > li {
+  border-bottom: 2px solid #281300;
+}
+
+i {
+  /* Dela upp i generell style och specifik */
+  cursor: pointer;
+  text-align: end;
+}
+
+.navigation-link-text {
+  padding: 2rem 0;
+  background: var(--main-background-color);
+  text-align: center;
+}
+
+.navigation-link:is(:hover, :active, :focus) > .navigation-link-text {
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-background-color);
+}
+
+/* Här kommer huvudinnehållet */
+main {
+  padding-top: 4.5rem;
+}
+
+/* Första helside-sektionen */
+.presentation {
+  min-height: calc(100vh - 4.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.presentation-top-container {
+  flex-grow: 1;
+  padding: 0 24px 11.3rem;
+}
+
+#slogan {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.presentation-bottom-container {
+  width: 100%;
+  background-color: var(--secondary-background-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 28px;
+  align-items: center;
+}
+
+.bottom-container__btn {
+  margin-top: 16px;
+}
+
+.bottom-container__img {
+  width: 100px;
+  position: absolute;
+  bottom: 90%;
+  left: 10%;
+}
+
+.bottom-container-decoration {
+  position: absolute;
+  bottom: 105%;
+  right: 10%;
+  height: 8rem;
+  width: 8rem;
+  transform: rotate(45deg);
+  background-color: darkred;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 1);
+}
+
+.bottom-container-decoration__text {
+  transform: rotate(-45deg);
+  transform-origin: bottom right;
+  position: absolute;
+  top: -0.5em;
+  font-size: 1rem;
+}
+
+@media (min-width: 580px) {
+  .navigation-link-text {
+    padding: 0.3rem 0.5rem;
+    background: linear-gradient(
+        to left,
+        var(--main-background-color) 50%,
+        var(--secondary-background-color) 50%
+      )
+      right;
+    background-size: 200% 100%;
+    transition: all 0.4s ease;
+    width: fit-content;
+  }
+
+  .navigation-link:is(:hover, :active, :focus) > .navigation-link-text {
+    transition: all 0.4s ease;
+    background-position: left;
+  }
+}
