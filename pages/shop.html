@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../assets/fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../code/index.js" type="module"></script>
+    <title>Hem | Kaffebaren</title>
+  </head>
+  <body class="normal-text-size">
+    <header class="top-navigation-container" id="top-navigation-container">
+      <nav class="hamburger-content top-navigation-content">
+        <div class="logo-container">
+          <picture></picture><a href="../index.html">Kaffebaren</a>
+        </div>
+        <i class="fa-solid fa-cart-shopping" title="Din kundvagn"></i>
+        <div class="hamburger-container">
+          <button class="hamburger" id="hamburger-toggle">
+            <i
+              class="fa-solid fa-bars hamburger-icon"
+              id="hamburger-menu-open"
+              title="Öppna navigationsmeny"
+            ></i>
+            <i
+              class="fa-solid fa-xmark hamburger-icon hidden"
+              id="hamburger-menu-close"
+              title="Stäng navigationsmeny"
+            ></i>
+          </button>
+        </div>
+        <ul
+          class="navigation-links-container hidden"
+          id="navigation-links-container"
+        >
+          <li>
+            <a class="navigation-link" href="../index.html"
+              ><p class="navigation-link-text">Hem</p></a
+            >
+          </li>
+          <li>
+            <a class="navigation-link" href="/pages/shop.html"
+              ><p class="navigation-link-text">Butik</p></a
+            >
+          </li>
+          <li>
+            <a class="navigation-link" href="/pages/about.html"
+              ><p class="navigation-link-text">Om oss</p></a
+            >
+          </li>
+        </ul>
+        <!-- <div class="searchbar">
+          <datalist id="search-terms">
+            <option value="Mörkrostat etopianskt kaffe"></option>
+          </datalist>
+          <input
+            list="search-terms"
+            type="search"
+            placeholder="Sök"
+            id="search-shop"
+          />
+        </div> -->
+      </nav>
+    </header>
+    <main>
+      <section class="shop brown-text normal-text" id="shop">
+        <h1 class="white-text big-heading-size center-text">Butik</h1>
+        <form class="shop-filter-container">
+          <datalist id="search-terms">
+            <option value="Mörkrostat kaffe"></option>
+          </datalist>
+          <input
+            list="search-terms"
+            type="search"
+            placeholder="Sök"
+            id="search-shop"
+          />
+          <label for="fair">
+            Fairtrade
+            <input type="checkbox" id="fair" />
+          </label>
+          <label for="eko">
+            Ekologiskt
+            <input type="checkbox" id="eko" />
+          </label>
+        </form>
+        <div class="shop-items-container">
+          <article class="shop-item-container">
+            <img src="../assets/images/coffe-bean.jpg" alt="" />
+            <div class="item-info-content">
+              <h2>Marokanskt ekologiskt kaffe</h2>
+              <p class="item-price">190,00 kr</p>
+              <p class="item-desc">
+                Finmalet ekologiskt kaffe med smak av äpple och kanel.
+              </p>
+              <p class="item-coffee-type">
+                Innehåll: <span>Bryggmalet, 500g</span>
+              </p>
+              <div class="item-info-content-btns">
+                <button
+                  class="btn btn-small btn-white btn-selected ground-coffee-btn"
+                  id="ground-coffee-btn-1"
+                >
+                  Bryggmalet, 500g
+                </button>
+                <button
+                  class="btn btn-small btn-white bean-coffee-btn"
+                  id="bean-coffee-btn-1"
+                >
+                  Hela bönor, 500g
+                </button>
+              </div>
+              <div class="item-info-content-item-counter">
+                <button title="Ta bort vara" class="coffee-sub" id="sub-1">
+                  -
+                </button>
+                <p class="item-counter">1</p>
+                <button title="Lägg till vara" class="coffee-add" id="add-1">
+                  +
+                </button>
+              </div>
+              <button class="btn btn-big btn-red add-to-cart">
+                Lägg till<span> 190,00 kr</span>
+              </button>
+            </div>
+          </article>
+          <article class="shop-item-container">
+            <img src="../assets/images/coffe-bean.jpg" alt="" />
+            <div class="item-info-content">
+              <h2>Marokanskt ekologiskt kaffe</h2>
+              <p class="item-price">190,00 kr</p>
+              <p class="item-desc">
+                Finmalet ekologiskt kaffe med smak av äpple och kanel.
+              </p>
+              <p class="item-coffee-type">
+                Innehåll: <span>Bryggmalet, 500g</span>
+              </p>
+              <div class="item-info-content-btns">
+                <button
+                  class="btn btn-small btn-white btn-selected ground-coffee-btn"
+                  id="ground-coffee-btn-2"
+                >
+                  Bryggmalet, 500g
+                </button>
+                <button
+                  class="btn btn-small btn-white bean-coffee-btn"
+                  id="bean-coffee-btn-2"
+                >
+                  Hela bönor, 500g
+                </button>
+              </div>
+              <div class="item-info-content-item-counter">
+                <button title="Ta bort vara" class="coffee-sub" id="sub-2">
+                  -
+                </button>
+                <p class="item-counter">1</p>
+                <button title="Lägg till vara" class="coffee-add" id="add-2">
+                  +
+                </button>
+              </div>
+              <button class="btn btn-big btn-red add-to-cart">
+                Lägg till<span> 190,00 kr</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>FOOTER</footer>
+  </body>
+</html>
