@@ -218,9 +218,12 @@ main {
   padding-top: 4.5rem;
 }
 
+.page {
+  min-height: calc(100vh - 4.5rem);
+}
+
 /* Första helside-sektionen */
 .presentation {
-  min-height: calc(100vh - 4.5rem);
   display: flex;
   flex-direction: column;
 }
@@ -278,7 +281,6 @@ main {
 
 /* Shop */
 .shop {
-  min-height: calc(100vh - 4.5rem);
   padding: 0 24px;
 }
 
@@ -286,8 +288,13 @@ main {
   margin-top: 24px;
 }
 
+.shop-item-container:not(:first-of-type) {
+  padding-top: 24px;
+}
+
 .shop-item-container:not(:last-of-type) {
-  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--main-background-color-nyans);
 }
 
 /* Sök och filtrera */
