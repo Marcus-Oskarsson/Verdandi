@@ -5,8 +5,6 @@
   const hamburgerToggle = document.getElementById("hamburger-toggle")
   const topMenu = document.getElementById("top-navigation-container")
 
-  // const groundCoffeeBtn = document.getElementById("ground-coffee-btn")
-  // const beanCoffeeBtn = document.getElementById("bean-coffee-btn")
   const allcoffeeTypeTexts = document.getElementsByClassName("item-coffee-type")
   const allTotalPrices = document.getElementsByClassName("add-to-cart")
   const allBeanBtns = [...document.getElementsByClassName("bean-coffee-btn")]
@@ -37,16 +35,17 @@
     lastKnownYPosition = window.pageYOffset
   }
 
-  const selectBeans = (isBeans, beanBtn, groundBtn ) => {
+  const selectBeans = (isBeans, beanBtn, groundBtn, id) => {
     if (isBeans) {
       groundBtn.classList.remove("btn-selected")
       beanBtn.classList.add("btn-selected")
-      allcoffeeTypeTexts[0].children[0].textContent = beanBtn.outerText
+      console.log(allcoffeeTypeTexts[id])
+      allcoffeeTypeTexts[id].children[0].textContent = beanBtn.outerText
 
     } else {
       groundBtn.classList.add("btn-selected")
       beanBtn.classList.remove("btn-selected")
-    allcoffeeTypeTexts[0].children[0].textContent = groundBtn.outerText
+      allcoffeeTypeTexts[id].children[0].textContent = groundBtn.outerText
     }
   }
 
@@ -62,9 +61,9 @@
     const id = getId(e)
     const bothBtns = getBothBtns(id)
     if (e.target.outerText.includes("bönor")) {
-      selectBeans(true, ...bothBtns)
+      selectBeans(true, ...bothBtns, id)
     } else {
-      selectBeans(false, ...bothBtns)
+      selectBeans(false, ...bothBtns, id)
     }
   }
 
