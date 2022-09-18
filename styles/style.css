@@ -123,7 +123,6 @@ input[type="search"] {
   border-radius: 5px;
   font-size: inherit;
   cursor: pointer;
-  box-sizing: border-box;
   width: fit-content;
   font-family: "Playfair Display", serif;
 }
@@ -141,8 +140,8 @@ input[type="search"] {
 }
 
 .btn-small {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
+  padding: 6px 8px;
+  font-size: 1.2rem;
 }
 
 .btn-red {
@@ -190,7 +189,7 @@ header {
 
 .hamburger-container {
   order: 2;
-  min-width: 2rem;
+  min-width: 3rem;
   text-align: end;
 }
 
@@ -244,6 +243,14 @@ main {
 .page:first-of-type,
 .page:last-of-type {
   min-height: calc(100vh - 4.5rem);
+}
+
+.page:last-of-type:not(:first-of-type) {
+  padding: 48px;
+}
+
+.page:last-of-type:first-of-type {
+  padding-bottom: 48px;
 }
 
 /* Första helside-sektionen */
@@ -409,7 +416,7 @@ footer > address {
 
 .shop-item-container:not(:last-of-type) {
   padding-bottom: 24px;
-  border-bottom: 2px solid var(--main-background-color-nyans);
+  border-bottom: 2px solid var(--secondary-btn-background-color);
 }
 
 /* Sök och filtrera */
@@ -436,14 +443,17 @@ footer > address {
 
 .item-info-content-btns {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   margin-bottom: 16px;
+}
+
+.ground-coffee-btn {
+  margin-right: 8px;
 }
 
 .item-info-content-item-counter {
   display: flex;
   color: black;
-  padding: 0.6rem 0.4rem;
   width: fit-content;
   border: 1px solid var(--main-background-color-nyans);
   margin: auto auto 24px auto;
@@ -454,11 +464,30 @@ footer > address {
 }
 
 .item-info-content-item-counter > * {
-  padding: 0 0.6rem;
+  font-size: 2rem;
+  padding: 8px 16px;
+}
+
+@media (min-width: 460px) {
+  /* Shop */
+  .shop-items-container {
+    display: grid;
+    gap: 48px 24px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shop-item-container:not(:first-of-type) {
+    padding-top: 0;
+  }
+
+  .shop-item-container:not(:last-of-type) {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 }
 
 @media (min-width: 580px) {
-  .navigation-link-text {
+  /* .navigation-link-text {
     padding: 0.3rem 0.5rem;
     background: linear-gradient(
         to left,
@@ -474,12 +503,11 @@ footer > address {
   .navigation-link:is(:hover, :active, :focus) > .navigation-link-text {
     transition: all 0.4s ease;
     background-position: left;
-  }
+  } */
 
   /* Shop */
   .shop-items-container {
     display: grid;
-    gap: 8px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
