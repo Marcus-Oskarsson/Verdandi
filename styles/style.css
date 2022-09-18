@@ -11,6 +11,7 @@
   --main-background-color: #9fc7af;
   --main-background-color-nyans: #39473f;
   --secondary-background-color: #281300;
+  --secondary-background-color-transparent: #281300aa;
   --main-text-color: #281300;
   --secondary-text-color: #efefef;
   --main-btn-background-color: #ff6364;
@@ -42,6 +43,10 @@ button:focus,
 button:active {
   outline: none;
   border: none;
+}
+
+address {
+  font-style: normal;
 }
 
 button {
@@ -116,11 +121,20 @@ input[type="search"] {
   padding: 0.8rem 3rem;
   border: 0;
   border-radius: 5px;
-  font-family: inherit;
+  /* font-family: inherit; */
   font-size: inherit;
   cursor: pointer;
   box-sizing: border-box;
   width: fit-content;
+  font-family: "Playfair Display", serif;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  /* todo: måste göra det tydligt att man har fokus. men fungerar inte riktigt med färgerna! Kom ihåg att lägga till hover till +- också, samt till hamburgermenyn! */
+  outline: 2px solid black;
+  text-decoration: underline;
 }
 
 .btn-big {
@@ -157,6 +171,7 @@ header {
   padding: 0 20px;
   background-color: var(--main-background-color);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .top-navigation-content {
@@ -213,12 +228,22 @@ i {
   background-color: var(--main-background-color-nyans);
 }
 
-/* Här kommer huvudinnehållet */
+/* Här kommer huvudinnehållet
+Headern är minst 4.5rem */
 main {
-  padding-top: 4.5rem;
+  padding-top: calc(4.5rem);
 }
 
 .page {
+  min-height: 100vh;
+}
+
+.page:not(.page:nth-of-type(1)) {
+  padding-top: 16px;
+}
+
+.page:first-of-type,
+.page:last-of-type {
   min-height: calc(100vh - 4.5rem);
 }
 
@@ -230,13 +255,21 @@ main {
 
 .presentation-top-container {
   flex-grow: 1;
-  padding: 0 24px 11.3rem;
+  /* Lägger till 11rem padding i botten för att texten inte ska gå in i dekorationsboxen */
+  padding: 0 24px 11rem;
+}
+
+.page h1,
+.page h2 {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 #slogan {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
 }
 
 .presentation-bottom-container {
@@ -277,6 +310,89 @@ main {
   position: absolute;
   top: -0.5em;
   font-size: 1rem;
+}
+
+.short-find-us {
+  position: relative;
+}
+
+.short-find-us > picture {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.short-find-us img {
+  object-fit: cover;
+  object-position: center;
+  max-height: 100vh;
+  width: 100%;
+}
+
+.short-find-us-info-container {
+  background-color: var(--secondary-background-color-transparent);
+}
+
+.short-find-us-info-container,
+.short-opening-hours-info-container {
+  width: 25rem;
+  height: min-content;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 8px 8px 24px;
+  position: absolute;
+}
+
+.short-find-us-info-container p {
+  margin-bottom: 8px;
+}
+
+.short-find-us-info-container p:last-of-type {
+  margin-bottom: 24px;
+}
+
+.short-opening-hours {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid var(--secondary-background-color);
+  position: relative;
+}
+
+.short-opening-hours-info-container {
+  background-color: var(--secondary-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.opening-hours-table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.opening-hours-table th,
+.opening-hours-table td {
+  padding: 4px 8px 0;
+}
+
+footer {
+  min-height: 4.5rem;
+  padding: 16px 0;
+  box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+footer > address {
+  margin-bottom: 8px;
 }
 
 /* Shop */

@@ -13,7 +13,8 @@
     <header class="top-navigation-container" id="top-navigation-container">
       <nav class="hamburger-content top-navigation-content">
         <div class="logo-container">
-          <picture></picture><a href="index.html">Kaffebaren</a>
+          <picture></picture
+          ><a class="bold-text" href="index.html">Kaffebaren</a>
         </div>
         <div class="hamburger-container">
           <button class="hamburger" id="hamburger-toggle">
@@ -78,9 +79,6 @@
             hänt sen dess, men kaffet är detsamma!
           </p>
         </div>
-        <!-- Tänker att jag har botten i en egen kontainer för att enklare kunna
-        positionera innehållet. Då många delar utgår från botten och placeras
-        relativt den är det rimligt att ha dem här. -->
         <div class="presentation-bottom-container white-text center-text">
           <p>Awake Your Dreams With A Cup Of Coffee.</p>
           <p>Good Days Start With A Good Coffee</p>
@@ -100,12 +98,74 @@
           </div>
         </div>
       </section>
-      <section class="page">
-        <h2 class="normal-heading-size brown-text normal-text center-text">
-          Produkter
-        </h2>
+      <section class="page short-find-us">
+        <picture>
+          <source
+            srcset="/assets/images/contact-background.jpg"
+            media="(min-width: 800px)"
+          />
+          <img src="/assets/images/contact-background-mobile.jpg" alt="" />
+        </picture>
+        <article
+          class="white-text normal-text center-text short-find-us-info-container"
+        >
+          <h2 class="normal-heading-size normal-text">Kontakta oss</h2>
+          <address>
+            <h3>Besöksadress</h3>
+            <p>Selma Lagerlöfs torg 21, <wbr />Göteborg</p>
+            <h3>Telefon</h3>
+            <p><a href="tel:031-3659142">031-365 91 42</a></p>
+            <h3>Email</h3>
+            <p><a href="mailto:info@kaffebaren.se">info@kaffebaren.se</a></p>
+            <a class="btn btn-red" href="./pages/contact.html">Kontakt</a>
+          </address>
+        </article>
+      </section>
+      <section class="page short-opening-hours">
+        <article
+          class="white-text normal-text center-text short-opening-hours-info-container"
+        >
+          <h2 class="normal-heading-size normal-text">Öppettider</h2>
+          <table class="opening-hours-table">
+            <tbody>
+              <tr>
+                <th>Måndag</th>
+                <td>10.00-14.00</td>
+              </tr>
+              <tr>
+                <th>Tisdag</th>
+                <td>Stängt</td>
+              </tr>
+              <tr>
+                <th>Onsdag</th>
+                <td>10.00-14.00</td>
+              </tr>
+              <tr>
+                <th>Torsdag</th>
+                <td>Stängt</td>
+              </tr>
+              <tr>
+                <th>Fredag</th>
+                <td>12.00-15.00</td>
+              </tr>
+              <tr>
+                <th>Lördag</th>
+                <td>Stängt</td>
+              </tr>
+              <tr>
+                <th>Söndag</th>
+                <td>Stängt</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
       </section>
     </main>
-    <footer>FOOTER</footer>
+    <footer class="center-text">
+      <address>
+        <p>Selma Lagerlöfs torg 21, <wbr />Göteborg</p>
+      </address>
+      <p>&copy; Kaffebaren 2022</p>
+    </footer>
   </body>
 </html>
