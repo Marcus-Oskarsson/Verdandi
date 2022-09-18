@@ -17,7 +17,7 @@
   --main-btn-background-color: #ff6364;
   --secondary-btn-background-color: #efefef;
   font-size: 62.5%;
-  /* font-size: 150%; */
+  /* font-size: 100%; */
 }
 
 /* Tar bort ett par av default-värden för margin och padding för att enklare hantera styling och ändrar så storleken alltid är hela boxens storlek */
@@ -121,7 +121,6 @@ input[type="search"] {
   padding: 0.8rem 3rem;
   border: 0;
   border-radius: 5px;
-  /* font-family: inherit; */
   font-size: inherit;
   cursor: pointer;
   box-sizing: border-box;
@@ -289,13 +288,13 @@ main {
 .bottom-container__img {
   width: 100px;
   position: absolute;
-  bottom: 90%;
+  bottom: 88%;
   left: 10%;
 }
 
 .bottom-container-decoration {
   position: absolute;
-  bottom: 105%;
+  bottom: 102%;
   right: 10%;
   height: 8rem;
   width: 8rem;
