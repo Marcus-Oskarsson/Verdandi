@@ -576,6 +576,10 @@ footer > address {
 }
 
 @media (min-width: 768px) {
+  main {
+    padding-top: 0;
+  }
+
   .top-navigation-container {
     padding: 0 10%;
   }
