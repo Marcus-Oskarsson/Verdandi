@@ -193,11 +193,8 @@ header {
   text-align: end;
 }
 
-.searchbar {
-  order: 1;
-}
-
 .navigation-links-container {
+  order: 1;
   position: absolute;
   top: 4.5rem;
   left: 0;
@@ -274,7 +271,7 @@ main {
 #slogan {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 8px;
 }
 
@@ -365,7 +362,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 2px solid var(--secondary-background-color);
   position: relative;
 }
 
@@ -486,25 +482,48 @@ footer > address {
   }
 }
 
-@media (min-width: 580px) {
-  /* .navigation-link-text {
+@media (min-width: 480px) {
+  /* Döljer hamburgermenyn och visar som länkar istället */
+  .hamburger-container {
+    display: none;
+  }
+
+  .logo-container {
+    flex-grow: 0;
+  }
+
+  .navigation-links-container {
+    display: flex;
+    position: unset;
+    top: unset;
+    left: unset;
+    border-top: none;
+    width: max-content;
+    flex-grow: 1;
+    justify-content: space-evenly;
+  }
+
+  .shopping-icon {
+    order: 2;
+    width: 3rem;
+  }
+
+  .navigation-links-container > li {
+    border-bottom: none;
+  }
+
+  .navigation-link-text {
     padding: 0.3rem 0.5rem;
-    background: linear-gradient(
-        to left,
-        var(--main-background-color) 50%,
-        var(--secondary-background-color) 50%
-      )
-      right;
-    background-size: 200% 100%;
-    transition: all 0.4s ease;
-    width: fit-content;
   }
 
   .navigation-link:is(:hover, :active, :focus) > .navigation-link-text {
-    transition: all 0.4s ease;
-    background-position: left;
-  } */
+    color: unset;
+    background-color: unset;
+    text-decoration: underline;
+  }
+}
 
+@media (min-width: 768px) {
   /* Shop */
   .shop-items-container {
     display: grid;
