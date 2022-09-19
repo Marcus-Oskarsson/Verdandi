@@ -19,7 +19,7 @@
 
   const toggleMenu = () => {
     /* Togglar mellan de två ikonerna för att öppna respektive stänga hamburgermenyn */
-    hamburgerMenu.classList.toggle("hidden-left");
+    hamburgerMenu.classList.toggle("hidden-top");
     hamburgerMenuClose.classList.toggle("hidden");
     hamburgerMenuOpen.classList.toggle("hidden");
   };
@@ -33,12 +33,12 @@
       window.pageYOffset &&
       window.pageYOffset > lastKnownYPosition
     ) {
-      hamburgerMenu.classList.add("hidden-left");
+      hamburgerMenu.classList.add("hidden-top");
       hamburgerMenuClose.classList.add("hidden");
       hamburgerMenuOpen.classList.remove("hidden");
-      topMenu.classList.add("hidden-left");
+      topMenu.classList.add("hidden-top");
     } else {
-      topMenu.classList.remove("hidden-left");
+      topMenu.classList.remove("hidden-top");
     }
 
     lastKnownYPosition = window.pageYOffset;

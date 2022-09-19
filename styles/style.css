@@ -99,7 +99,7 @@ fieldset {
   display: none;
 }
 
-.hidden-left {
+.hidden-top {
   top: -300% !important;
   transition: 0.7s ease-in;
 }
