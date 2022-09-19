@@ -291,7 +291,7 @@ main {
 }
 
 .bottom-container__img {
-  width: 100px;
+  width: 120px;
   position: absolute;
   bottom: 88%;
   left: 10%;
@@ -465,8 +465,7 @@ footer > address {
   padding: 8px 16px;
 }
 
-
-@media (max-width: 580px) and (min-height: 640px) {
+/* @media (max-width: 580px) and (min-height: 640px) {
   .bottom-container__img {
     width: 150px;
     left: 5%;
@@ -504,7 +503,7 @@ footer > address {
   .bottom-container-decoration__text {
     font-size: 1.2rem;
   }
-}
+} */
 
 @media (min-width: 460px) {
   /* Shop */
