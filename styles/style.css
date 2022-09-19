@@ -2,8 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
-/* todo: nollställ onödig default-styling, lägg in färger i variabler, bestäm ytterligare minst 1 typsnitt och importera dem korrekt, bestäm textstorlekar i rem. */
-
+/* todo: lägg in färger i bättre klasser, bestäm ytterligare minst 1 typsnitt */
 /* extra: Implementera nån form av animation */
 
 /* Lägger in de mest använda färgerna i variabler för att enkelt kunna ändra färgerna på hela sidan, samt sätter font size så det motsvarar 10px */
@@ -11,13 +10,12 @@
   --main-background-color: #9fc7af;
   --main-background-color-nyans: #39473f;
   --secondary-background-color: #281300;
-  --secondary-background-color-transparent: #281300aa;
+  --secondary-background-color-transparent: #281300ec;
   --main-text-color: #281300;
   --secondary-text-color: #efefef;
   --main-btn-background-color: #ff6364;
   --secondary-btn-background-color: #efefef;
   font-size: 62.5%;
-  /* font-size: 100%; */
 }
 
 /* Tar bort ett par av default-värden för margin och padding för att enklare hantera styling och ändrar så storleken alltid är hela boxens storlek */
@@ -35,6 +33,7 @@ a {
   color: inherit;
 }
 
+/* Tar bort dekoration från aktiva länkar */
 a:hover,
 a:focus,
 a:active,
@@ -96,7 +95,6 @@ fieldset {
   font-family: "Playfair Display", serif;
 }
 
-/* Generella klasser */
 .hidden {
   display: none;
 }
@@ -105,7 +103,6 @@ fieldset {
   text-align: center;
 }
 
-/* Styling av komponenter */
 /* todo: ändra till klass för att få med andra rutor */
 input[type="search"] {
   outline: none;
@@ -193,6 +190,7 @@ header {
   text-align: end;
 }
 
+/* todo: är snyggare att ha en animation för menyn än att den bara försvinner / dyker upp */
 .navigation-links-container {
   order: 1;
   position: absolute;
@@ -208,7 +206,6 @@ header {
 }
 
 i {
-  /* Dela upp i generell style och specifik */
   cursor: pointer;
   text-align: end;
 }
@@ -231,23 +228,23 @@ main {
 }
 
 .page {
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .page:not(.page:nth-of-type(1)) {
-  padding-top: 16px;
+  /* padding-top: 16px; */
 }
 
 .page:first-of-type,
 .page:last-of-type {
-  min-height: calc(100vh - 7rem);
+  /* min-height: calc(100vh - 7rem); */
 }
 
 .page:last-of-type:not(:first-of-type) {
-  padding: 48px;
+  /* padding: 48px; */
 }
 
-.page:last-of-type:first-of-type {
+.last-page {
   padding-bottom: 48px;
 }
 
@@ -270,9 +267,6 @@ main {
 }
 
 #slogan {
-  width: 100%;
-  display: flex;
-  justify-content: center;
   margin-bottom: 8px;
 }
 
@@ -317,10 +311,15 @@ main {
 }
 
 .short-find-us {
-  position: relative;
+  display: flex;
+  height: 100vh;
+  background: url(../assets/images/contact-background-mobile.jpg) no-repeat
+    center center;
+  /* position: relative; */
+  /* background-color: red; */
 }
 
-.short-find-us > picture {
+/* .short-find-us > picture {
   position: absolute;
   top: 0;
   width: 100%;
@@ -332,7 +331,7 @@ main {
   object-position: center;
   max-height: 100vh;
   width: 100%;
-}
+} */
 
 .short-find-us-info-container {
   background-color: var(--secondary-background-color-transparent);
@@ -341,14 +340,13 @@ main {
 .short-find-us-info-container,
 .short-opening-hours-info-container {
   width: 25rem;
-  height: min-content;
   margin: auto;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   padding: 8px 8px 24px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .short-find-us-info-container p {
@@ -356,7 +354,7 @@ main {
 }
 
 .short-find-us-info-container p:last-of-type {
-  margin-bottom: 24px;
+  margin-top: 24px;
 }
 
 .short-opening-hours {
@@ -364,10 +362,12 @@ main {
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 48px 0;
 }
 
 .short-opening-hours-info-container {
   background-color: var(--secondary-background-color);
+  background-color: var(--secondary-background-color-transparent);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -400,7 +400,7 @@ footer > address {
 
 /* Shop */
 .shop {
-  padding: 0 24px;
+  padding: 0 24px 48px;
 }
 
 .shop-items-container {
@@ -467,7 +467,7 @@ footer > address {
 
 /* @media (max-width: 580px) and (min-height: 640px) {
   .bottom-container__img {
-    width: 150px;
+    width: 150px; 
     left: 5%;
   }
 }
@@ -525,6 +525,10 @@ footer > address {
 
 @media (min-width: 480px) {
   /* Döljer hamburgermenyn och visar som länkar istället */
+  header {
+    position: unset;
+  }
+
   .hamburger-container {
     display: none;
   }
@@ -542,6 +546,13 @@ footer > address {
     width: max-content;
     flex-grow: 1;
     justify-content: space-evenly;
+    box-shadow: unset;
+  }
+
+  .presentation-top-container p:nth-of-type(2),
+  .presentation-top-container p:nth-of-type(3) {
+    width: 70%;
+    text-align: justify;
   }
 
   .shopping-icon {
@@ -565,7 +576,77 @@ footer > address {
 }
 
 @media (min-width: 768px) {
+  .top-navigation-container {
+    padding: 0 10%;
+  }
+
+  .top-navigation-content {
+    padding: 0 24px;
+  }
+
+  .presentation {
+    width: 80%;
+    margin: auto;
+  }
+
+  .presentation-top-container > #slogan {
+    /* display: flex;
+    justify-content: space-between; */
+    width: 60%;
+    text-align: left;
+  }
+
+  .presentation-top-container p:nth-of-type(2),
+  .presentation-top-container p:nth-of-type(3) {
+    width: 50%;
+  }
+
+  .bottom-container__img {
+    width: 300px;
+    bottom: 70%;
+    left: unset;
+    right: 5%;
+  }
+
+  .presentation-bottom-container {
+    border-radius: 10px;
+  }
+
+  .bottom-container-decoration {
+    bottom: 215%;
+    margin: auto;
+    right: 2.5%;
+  }
+
+  .page:not(.page:nth-of-type(1)) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .bottom-startpage-container {
+    display: flex;
+    margin: 96px 0;
+    align-content: flex-end;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background-color: var(--secondary-background-color);
+  }
+
+  .short-find-us {
+    background: unset;
+  }
+
+  .short-find-us,
+  .short-opening-hours {
+    width: 50%;
+    height: 100%;
+  }
+
   /* Shop */
+  .shop-filter-container {
+    width: 50%;
+    margin: auto;
+  }
   .shop-items-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -573,6 +654,20 @@ footer > address {
 }
 
 @media (min-width: 920px) {
+  .top-navigation-container {
+    padding: 0 20%;
+  }
+  .presentation {
+    width: 60%;
+    min-height: calc(100vh - 7rem);
+  }
+
+  .bottom-startpage-container {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   /* Shop */
   .shop-items-container {
     grid-template-columns: repeat(3, 1fr);

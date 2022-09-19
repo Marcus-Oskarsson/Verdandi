@@ -28,7 +28,12 @@
   const menuOnScroll = () => {
     /* Döljer menyn om man scrollar nedåt och visar den om man är högst upp på sidan eller om man scrollar uppåt.
     Behöver fixa så det inte uppdaterar om man fortsätter trycka - väldigt störigt! */
-    if (window.pageYOffset && window.pageYOffset > lastKnownYPosition) {
+    console.log(window.innerWidth);
+    if (
+      window.innerWidth < 480 &&
+      window.pageYOffset &&
+      window.pageYOffset > lastKnownYPosition
+    ) {
       hamburgerMenu.classList.add("hidden");
       hamburgerMenuClose.classList.add("hidden");
       hamburgerMenuOpen.classList.remove("hidden");
