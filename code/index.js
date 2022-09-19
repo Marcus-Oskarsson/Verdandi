@@ -19,7 +19,7 @@
 
   const toggleMenu = () => {
     /* Togglar mellan de två ikonerna för att öppna respektive stänga hamburgermenyn */
-    hamburgerMenu.classList.toggle("hidden");
+    hamburgerMenu.classList.toggle("hidden-left");
     hamburgerMenuClose.classList.toggle("hidden");
     hamburgerMenuOpen.classList.toggle("hidden");
   };
@@ -28,18 +28,17 @@
   const menuOnScroll = () => {
     /* Döljer menyn om man scrollar nedåt och visar den om man är högst upp på sidan eller om man scrollar uppåt.
     Behöver fixa så det inte uppdaterar om man fortsätter trycka - väldigt störigt! */
-    console.log(window.innerWidth);
     if (
       window.innerWidth < 480 &&
       window.pageYOffset &&
       window.pageYOffset > lastKnownYPosition
     ) {
-      hamburgerMenu.classList.add("hidden");
+      hamburgerMenu.classList.add("hidden-left");
       hamburgerMenuClose.classList.add("hidden");
       hamburgerMenuOpen.classList.remove("hidden");
-      topMenu.classList.add("hidden");
+      topMenu.classList.add("hidden-left");
     } else {
-      topMenu.classList.remove("hidden");
+      topMenu.classList.remove("hidden-left");
     }
 
     lastKnownYPosition = window.pageYOffset;

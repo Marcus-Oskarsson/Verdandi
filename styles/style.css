@@ -99,6 +99,11 @@ fieldset {
   display: none;
 }
 
+.hidden-left {
+  top: -300% !important;
+  transition: 0.7s ease-in;
+}
+
 .center-text {
   text-align: center;
 }
@@ -199,6 +204,7 @@ header {
   width: 100vw;
   border-top: 1px solid var(--main-background-color-nyans);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.7s ease-in;
 }
 
 .navigation-links-container > li {
@@ -278,6 +284,10 @@ main {
   flex-direction: column;
   padding: 42px 28px;
   align-items: center;
+}
+
+.presentation-bottom-container p {
+  margin-bottom: 8px;
 }
 
 .bottom-container__btn {
@@ -549,6 +559,14 @@ footer > address {
     box-shadow: unset;
   }
 
+  .active {
+    font-weight: bold;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
   .presentation-top-container p:nth-of-type(2),
   .presentation-top-container p:nth-of-type(3) {
     width: 70%;
@@ -576,10 +594,6 @@ footer > address {
 }
 
 @media (min-width: 768px) {
-  main {
-    padding-top: 0;
-  }
-
   .top-navigation-container {
     padding: 0 10%;
   }
@@ -593,9 +607,12 @@ footer > address {
     margin: auto;
   }
 
+  /* Kanske kan bytas mot .page för att få alla sidor */
+  .presentation-top-container h1 {
+    margin-bottom: 48px;
+  }
+
   .presentation-top-container > #slogan {
-    /* display: flex;
-    justify-content: space-between; */
     width: 60%;
     text-align: left;
   }
@@ -607,7 +624,7 @@ footer > address {
 
   .bottom-container__img {
     width: 300px;
-    bottom: 70%;
+    bottom: 78%;
     left: unset;
     right: 5%;
   }
@@ -664,6 +681,10 @@ footer > address {
   .presentation {
     width: 60%;
     min-height: calc(100vh - 7rem);
+  }
+
+  .presentation-bottom-container {
+    border-radius: 0;
   }
 
   .bottom-startpage-container {
