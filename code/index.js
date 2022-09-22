@@ -25,7 +25,7 @@
   };
 
   let lastKnownYPosition = 0;
-  const menuOnScroll = () => {
+  const onMenuOnScroll = () => {
     /* Döljer menyn om man scrollar nedåt och visar den om man är högst upp på sidan eller om man scrollar uppåt.
     Behöver fixa så det inte uppdaterar om man fortsätter trycka - väldigt störigt! */
     if (
@@ -40,7 +40,6 @@
     } else {
       topMenu.classList.remove("hidden-top");
     }
-
     lastKnownYPosition = window.pageYOffset;
   };
 
@@ -85,30 +84,34 @@
 
   const updatePrice = (id, count) => {
     const TOTALPRICE = count * 190;
-    allTotalPrices[id].children[0].textContent = `  ${TOTALPRICE},00 kr`;
+    const NEW_PRICE_STRING = `  ${TOTALPRICE},00 kr`
+    const add_to_cart_button = allTotalPrices[id].children[0]
+    add_to_cart_button.textContent = NEW_PRICE_STRING;
   };
 
-  const subItem = (e) => {
+  const subItemCount = (e) => {
     const id = getId(e);
-    const newValue = updateCount(id, -1);
+    const SUBTRACT_BY_ONE = -1
+    const newValue = updateCount(id, SUBTRACT_BY_ONE);
     updatePrice(id, newValue);
   };
 
-  const AddItem = (e) => {
+  const AddItemCount = (e) => {
     const id = getId(e);
-    const newValue = updateCount(id, 1);
+    const ADD_BY_ONE = 1
+    const newValue = updateCount(id, ADD_BY_ONE);
     updatePrice(id, newValue);
   };
 
-  document.addEventListener("scroll", menuOnScroll);
+  document.addEventListener("scroll", onMenuOnScroll);
   hamburgerToggle.addEventListener("click", toggleMenu);
 
   allSubBtns.forEach((subBtn) => {
-    subBtn.addEventListener("click", subItem);
+    subBtn.addEventListener("click", subItemCount);
   });
 
   allAddBtns.forEach((addBtn) => {
-    addBtn.addEventListener("click", AddItem);
+    addBtn.addEventListener("click", AddItemCount);
   });
 
   allGroundBtns.forEach((groundBtn) => {

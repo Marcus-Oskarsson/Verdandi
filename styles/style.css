@@ -2,10 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
-/* todo: lägg in färger i bättre klasser, bestäm ytterligare minst 1 typsnitt */
-/* extra: Implementera nån form av animation */
-
-/* Lägger in de mest använda färgerna i variabler för att enkelt kunna ändra färgerna på hela sidan, samt sätter font size så det motsvarar 10px */
+/* Lägger in färgerna & typsnitt i variabler för att enkelt kunna ändra färgerna och typsnitten på hela sidan, samt sätter font size så det motsvarar 10px */
 :root {
   --main-background-color: #9fc7af;
   --main-background-color-nyans: #39473f;
@@ -15,6 +12,9 @@
   --secondary-text-color: #efefef;
   --main-btn-background-color: #ff6364;
   --secondary-btn-background-color: #efefef;
+  --paragraph-text-font: "Playfair Display", serif;
+  --logo-text-font: "Fascinate Inline", Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
   font-size: 62.5%;
 }
 
@@ -87,12 +87,11 @@ fieldset {
 }
 
 .bold-text {
-  font-family: "Fascinate Inline", Impact, Haettenschweiler, "Arial Narrow Bold",
-    sans-serif;
+  font-family: var(--logo-text-font);
 }
 
 .normal-text {
-  font-family: "Playfair Display", serif;
+  font-family: var(--paragraph-text-font);
 }
 
 .hidden {
@@ -100,6 +99,7 @@ fieldset {
 }
 
 .hidden-top {
+  /* todo: ta bort !important */
   top: -300% !important;
   transition: 0.7s ease-in;
 }
@@ -108,7 +108,6 @@ fieldset {
   text-align: center;
 }
 
-/* todo: ändra till klass för att få med andra rutor */
 input[type="search"] {
   outline: none;
   border: 0;
@@ -132,7 +131,7 @@ input[type="search"] {
 .btn:hover,
 .btn:active,
 .btn:focus {
-  /* todo: måste göra det tydligt att man har fokus. men fungerar inte riktigt med färgerna! Kom ihåg att lägga till hover till +- också, samt till hamburgermenyn! */
+  /* todo: måste göra det tydligt att man har fokus. men fungerar inte riktigt med färgerna! Lägg till hover till +- samt till hamburgermenyn! */
   outline: 2px solid black;
   text-decoration: underline;
 }
@@ -195,7 +194,6 @@ header {
   text-align: end;
 }
 
-/* todo: är snyggare att ha en animation för menyn än att den bara försvinner / dyker upp */
 .navigation-links-container {
   order: 1;
   position: absolute;
@@ -227,34 +225,17 @@ i {
   background-color: var(--main-background-color-nyans);
 }
 
-/* Här kommer huvudinnehållet
+/* Huvudinnehållet
 Headern är minst 7rem */
 main {
   padding-top: 7rem;
-}
-
-.page {
-  /* min-height: 100vh; */
-}
-
-.page:not(.page:nth-of-type(1)) {
-  /* padding-top: 16px; */
-}
-
-.page:first-of-type,
-.page:last-of-type {
-  /* min-height: calc(100vh - 7rem); */
-}
-
-.page:last-of-type:not(:first-of-type) {
-  /* padding: 48px; */
 }
 
 .last-page {
   padding-bottom: 48px;
 }
 
-/* Första helside-sektionen */
+/* Första sektionen */
 .presentation {
   display: flex;
   flex-direction: column;
@@ -325,23 +306,7 @@ main {
   height: 100vh;
   background: url(../assets/images/contact-background-mobile.jpg) no-repeat
     center center;
-  /* position: relative; */
-  /* background-color: red; */
 }
-
-/* .short-find-us > picture {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-}
-
-.short-find-us img {
-  object-fit: cover;
-  object-position: center;
-  max-height: 100vh;
-  width: 100%;
-} */
 
 .short-find-us-info-container {
   background-color: var(--secondary-background-color-transparent);
@@ -356,7 +321,6 @@ main {
   top: 0;
   bottom: 0;
   padding: 8px 8px 24px;
-  /* position: absolute; */
 }
 
 .short-find-us-info-container p {
@@ -475,46 +439,6 @@ footer > address {
   padding: 8px 16px;
 }
 
-/* @media (max-width: 580px) and (min-height: 640px) {
-  .bottom-container__img {
-    width: 150px; 
-    left: 5%;
-  }
-}
-
-@media (max-width: 580px) and (min-height: 700px) {
-  .bottom-container__img {
-    width: 300px;
-    bottom: 77%;
-    left: 0;
-  }
-
-  .bottom-container-decoration {
-    bottom: 185%;
-    right: 5%;
-  }
-}
-
-@media (max-width: 580px) and (min-height: 740px) {
-  .bottom-container__img {
-    height: 400px;
-    bottom: 45%;
-  }
-}
-
-@media (max-width: 580px) and (min-height: 780px) {
-  .bottom-container-decoration {
-    bottom: 195%;
-    width: 10rem;
-    height: 10rem;
-    right: 5%;
-  }
-
-  .bottom-container-decoration__text {
-    font-size: 1.2rem;
-  }
-} */
-
 @media (min-width: 460px) {
   /* Shop */
   .shop-items-container {
@@ -607,7 +531,7 @@ footer > address {
     margin: auto;
   }
 
-  /* Kanske kan bytas mot .page för att få alla sidor */
+  /* Kanske kan bytas mot .page för att nå alla sidor */
   .presentation-top-container h1 {
     margin-bottom: 48px;
   }
