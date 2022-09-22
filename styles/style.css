@@ -4,8 +4,8 @@
 
 /* Lägger in färgerna & typsnitt i variabler för att enkelt kunna ändra färgerna och typsnitten på hela sidan, samt sätter font size så det motsvarar 10px */
 :root {
-  --main-background-color: #9fc7af;
-  --main-background-color-nyans: #39473f;
+  --main-background-color: #6f908b;
+  --main-background-color-nyans: #3d4f4c;
   --secondary-background-color: #281300;
   --secondary-background-color-transparent: #281300ec;
   --main-text-color: #281300;
@@ -388,6 +388,10 @@ footer > address {
 .shop-item-container:not(:last-of-type) {
   padding-bottom: 24px;
   border-bottom: 2px solid var(--secondary-btn-background-color);
+}
+
+.shop-item-container img {
+  width: 100%;
 }
 
 /* Sök och filtrera */
