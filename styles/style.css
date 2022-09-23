@@ -30,7 +30,7 @@
 /* Tar bort dekoration från länkar */
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--main-text-color);
 }
 
 /* Tar bort dekoration från aktiva länkar */
@@ -130,7 +130,10 @@ input[type="search"] {
 
 .btn:hover,
 .btn:active,
-.btn:focus {
+.btn:focus,
+input[type="search"]:focus,
+input[type="search"]:active,
+input[type="search"]:hover {
   /* todo: måste göra det tydligt att man har fokus. men fungerar inte riktigt med färgerna! Lägg till hover till +- samt till hamburgermenyn! */
   outline: 2px solid black;
   text-decoration: underline;
@@ -212,6 +215,7 @@ header {
 i {
   cursor: pointer;
   text-align: end;
+  color: var(--main-text-color);
 }
 
 .navigation-link-text {
@@ -375,6 +379,11 @@ footer > address {
 /* Shop */
 .shop {
   padding: 0 24px 48px;
+}
+
+.shop-filter-label {
+  /* flex-grow: 1; */
+  margin-bottom: 8px;
 }
 
 .shop-items-container {
@@ -564,7 +573,7 @@ footer > address {
   .bottom-container-decoration {
     bottom: 215%;
     margin: auto;
-    right: 2.5%;
+    right: 2rem;
   }
 
   .page:not(.page:nth-of-type(1)) {
