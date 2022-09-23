@@ -33,6 +33,19 @@ a {
   color: var(--main-text-color);
 }
 
+a,
+h2,
+h3,
+i,
+p,
+span {
+  color: var(--main-text-color);
+}
+
+h1 {
+  color: var(--secondary-text-color);
+}
+
 /* Tar bort dekoration från aktiva länkar */
 a:hover,
 a:focus,
@@ -215,7 +228,6 @@ header {
 i {
   cursor: pointer;
   text-align: end;
-  color: var(--main-text-color);
 }
 
 .navigation-link-text {
