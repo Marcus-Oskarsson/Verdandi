@@ -38,12 +38,10 @@ h2,
 h3,
 i,
 p,
-span {
-  color: var(--main-text-color);
-}
-
-h1 {
-  color: var(--secondary-text-color);
+span,
+td,
+th {
+  font-family: var(--paragraph-text-font);
 }
 
 /* Tar bort dekoration från aktiva länkar */
@@ -59,6 +57,10 @@ button:active {
 
 address {
   font-style: normal;
+}
+
+body {
+  font-size: 1.6rem;
 }
 
 button {
@@ -87,9 +89,9 @@ fieldset {
   font-size: 2.8rem;
 }
 
-.normal-text-size {
+/* .normal-text-size {
   font-size: 1.6rem;
-}
+} */
 
 .brown-text {
   color: var(--main-text-color);
@@ -103,9 +105,9 @@ fieldset {
   font-family: var(--logo-text-font);
 }
 
-.normal-text {
+/* .normal-text {
   font-family: var(--paragraph-text-font);
-}
+} */
 
 .hidden {
   display: none;
@@ -424,7 +426,7 @@ footer > address {
   border-bottom: 2px solid var(--secondary-btn-background-color);
 }
 
-.shop-filter-container > label {
+.shop-filter-container > label:not(:first-of-type) {
   margin-top: 16px;
 }
 
@@ -557,7 +559,7 @@ footer > address {
   }
 
   /* Kanske kan bytas mot .page för att nå alla sidor */
-  .presentation-top-container h1 {
+  .page h1 {
     margin-bottom: 48px;
   }
 
@@ -638,6 +640,12 @@ footer > address {
 
   .bottom-startpage-container {
     width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page {
+    max-width: 102rem;
     margin-left: auto;
     margin-right: auto;
   }
