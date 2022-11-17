@@ -16,7 +16,6 @@ Verdandi is a local coffee roastery famous for their friendly owners and amazing
 ## Project goals
 - Semantic HTML
 - Responsive design
-- Website made after website sketch
 
 ## improvements to be made
 - Better looking shop view. 
